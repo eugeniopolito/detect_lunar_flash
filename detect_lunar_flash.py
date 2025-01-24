@@ -33,7 +33,7 @@ def compute_scale():
             break
     while True:
         print("\nInserisci il fattore di scala della lente di Barlow")
-        print("[1 = Nessuna lente, 0.3, 0.5, 2, ...")
+        print("[1 = Nessuna lente, 0.3, 0.5, 2, ...]")
         try:
             barlow_factor = float(input("-->"))
         except ValueError:

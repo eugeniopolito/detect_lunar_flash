@@ -81,7 +81,7 @@ E poi:
 
 ```
 Inserisci il fattore di scala della lente di Barlow
-[1 = Nessuna lente, 0.3, 0.5, 2, ...
+[1 = Nessuna lente, 0.3, 0.5, 2, ...]
 ```
 
 Per esempio con i valori: `3.75`, `2000`, `0.3` si ottiene questo output:
