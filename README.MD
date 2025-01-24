@@ -3,7 +3,8 @@
 Questo tool a linea di comando scritto in <b>Python</b> è pensato per cercare probabili flash da impatto sulla superficie lunare. <br>
 Può essere utilizzato in fase di post-processing insieme al software <b>FireCapture</b> (<link>https://www.firecapture.de</link>) unitamente al plugin scritto dal `NOA/ESA` <b>Flash Detection Software</b> (<link>https://kryoneri.astro.noa.gr/en/flash-detection-software/</link>). <br>
 Per usare <b>detect_lunar_flash</b> unitamente ad <b>FDS</b>, è necessario salvare i frame dell'eventuale flash come immagini in formato `PNG` (ad esempio 10 frame prima e dopo il flash). <br>
-Una volta che è stato rilevato il flash e sono state salvate le immagini da <b>FDS</b> è possibile utilizzare questo tool per la ricerca dell'eventuale impatto e la determinazione della sua posizione sulla superficie lunare. <br> 
+<b>L'orientamento delle immagini deve essere con Nord in alto ed Est a destra.</b><br>
+Una volta che è stato rilevato il probabile flash e sono state salvate le <em>n</em> immagini da <b>FDS</b> è possibile utilizzare questo tool per la ricerca dell'eventuale impatto e la determinazione della sua posizione sulla superficie lunare. <br> 
 Per la ricerca dei contorni del flash è stato utilizzato l'algoritmo <b>Canny Edge Detector</b> (vedi <link>https://en.wikipedia.org/wiki/Canny_edge_detector</link>)
 della libreria `OpenCV`.<br>
 Nel caso in cui venga trovato un probabile impatto, viene creata una nuova immagine con un cerchio intorno al flash, che ha il prefisso `flash_`, nella stessa directory da cui vengono lette le immagini (per esempio `flash_1.png`).<br>
