@@ -28,7 +28,7 @@ def compute_scale():
         try:
             focal_length = int(input("-->"))
         except ValueError:
-            print(f"Mmm... la focale sembra essere un numero valido")
+            print(f"Mmm... la focale non sembra essere un numero valido")
         else:
             break
     while True:
