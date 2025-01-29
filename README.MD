@@ -17,7 +17,7 @@ Il software può essere scaricato da: <link>https://www.docker.com/products/dock
 Il link diretto per Windows è: <a href="https://desktop.docker.com/win/main/amd64/Docker%20Desktop%20Installer.exe?utm_source=docker&utm_medium=webreferral&utm_campaign=dd-smartbutton&utm_location=module&_gl=1*1pd78qm*_gcl_au*MTEzNjQ4MDQwNS4xNzM4MDY4NDQ2*_ga*MTg2ODU3OTU3MC4xNzM0NDI1MjM4*_ga_XJWPQMJYHQ*MTczODE0NDI4OS40LjEuMTczODE0ODI0OC41OS4wLjA">questo</a>.
 
 ## Installazione (tramite immagine Docker)
-Questo metodo dovrebbe essere utilizzato nel caso non si vogliano i sorgenti ed è il <b>metodo che dovrebbe essere utilizzato nella maggior parte dei casi</b>. <br>
+Questo metodo deve essere utilizzato nel caso non si vogliano i sorgenti ed è il <b>metodo da utilizzare nella maggior parte dei casi</b>. <br>
 Da una shell Windows/Linux/macOS eseguire il seguente comando:
 
 ```
