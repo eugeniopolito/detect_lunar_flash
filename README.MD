@@ -21,7 +21,7 @@ Questo metodo deve essere utilizzato nel caso non si vogliano i sorgenti ed è i
 Da una shell Windows/Linux/macOS eseguire il seguente comando:
 
 ```
- docker pull eugeniopolito/detect_lunar_flash   
+docker pull eugeniopolito/detect_lunar_flash   
 ```
 
 ## Installazione (tramite sorgenti)
@@ -35,16 +35,22 @@ oppure cliccando sul bottone verde `< > Code` e selezionando quindi `Download ZI
 - eseguire i seguenti comandi:
 
 ```
- cd detect_lunar_flash
+cd detect_lunar_flash
  
- docker build -t detect_lunar_flash .  
+docker build -t detect_lunar_flash .  
 ```
 
 ## Avvio del tool
-Per eseguire il programma, in entrambi i metodi utilizzati per l'installazione, lanciare il seguente comando:
+Per eseguire il programma lanciare il seguente comando nel caso in cui l'installazione è stata fatta tramite l'immagine `Docker`:
 
 ```
 docker run --rm -v <directory>:/app/images -it eugeniopolito/detect_lunar_flash
+```
+
+nel caso invece si è proceduto con l'installazione e la build dei sorgenti, eseguire il comando:
+
+```
+docker run --rm -v <directory>:/app/images -it detect_lunar_flash
 ```
 
 dove `<directory>` è la directory del proprio file system che contiene le immagini in formato `PNG` da analizzare. Per esempio: `c:\immagini` (Windows) oppure `/home/user/images` (macOS/Linux). <br>
