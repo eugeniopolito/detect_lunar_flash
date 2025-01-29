@@ -44,7 +44,7 @@ oppure cliccando sul bottone verde `< > Code` e selezionando quindi `Download ZI
 Per eseguire il programma, in entrambi i metodi utilizzati per l'installazione, lanciare il seguente comando:
 
 ```
-docker run --rm -v <directory>:/app/images -it detect_lunar_flash
+docker run --rm -v <directory>:/app/images -it eugeniopolito/detect_lunar_flash
 ```
 
 dove `<directory>` è la directory del proprio file system che contiene le immagini in formato `PNG` da analizzare. Per esempio: `c:\immagini` (Windows) oppure `/home/user/images` (macOS/Linux). <br>
