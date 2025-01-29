@@ -43,7 +43,13 @@ Dopo aver scaricato il codice sorgente da `GitHub`, posizionarsi nella directory
 cd detect_lunar_flash
 ```
 
-e lanciare il comando seguente:
+e lanciare la prima volta il comando seguente per installare le librerie necessarie:
+
+```
+pipenv install
+```
+
+al termine dell'installazione si può eseguire il programma:
 
 ```
 pipenv run python app.py
