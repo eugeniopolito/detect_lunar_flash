@@ -5,6 +5,7 @@ import cv2
 
 MOON_SIZE = 1860
 RADIUS_MOON_KM = 1737.4
+IMAGES_PATH_DIR = "/app/images/"
 
 """
 Calcola la scala (km/pixel)
@@ -50,11 +51,7 @@ Esegue i calcoli per cercare l'eventuale flash usando l'algoritmo Canny Edge Det
 def check_flashes():
     scale_km_per_pixel = compute_scale()
 
-    print("Inserisci la directory che contiene le immagini")
-    print("[images, c:\\immagini\\, /detect_lunar_flash/images/..]")
-    images_dir = input("-->")
-
-    filenames = [img for img in glob.glob(f"{images_dir}*.png")]
+    filenames = [img for img in glob.glob(f"{IMAGES_PATH_DIR}*.png")]
 
     curr = 1
     for img_file in filenames:
@@ -88,7 +85,7 @@ def check_flashes():
             y = int(center[0])
             rad = 2 * int(radius)
             cv2.circle(result, (x, y), rad, (255, 255, 0), 1)
-            cv2.imwrite(f"{images_dir}/flash_{curr}.png", result)
+            cv2.imwrite(f"{IMAGES_PATH_DIR}/flash_{curr}.png", result)
             curr += 1
             image_array = np.array(gray)
             threshold = 40  # Threshold per il contrasto usato per separare la luna dallo sfondo

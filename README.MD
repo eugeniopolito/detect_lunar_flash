@@ -12,50 +12,44 @@ Vengono fornite in output le coordinate selenografiche approssimate ed il raggio
 
 ## Prerequisiti
 
-L'unico prerequisito per eseguire il tool è aver installato sul proprio sistema operativo l'interprete `Python`. <br>
-Per verificare se l'interprete è già installato è sufficiente eseguire il seguente comando in una shell (Windows/Linux/Mac):
-```
-python --version
-```
-> In caso il programma dia errore è necessario installare l'interprete dal seguente link: <link>https://www.python.org/downloads/</link>.
-Il bottone di download dovrebbe essere già configurato con la versione corretta di Python per il proprio sistema operativo (Windows/Linux/macOS).
+L'unico prerequisito per eseguire il tool è aver installato sul proprio sistema operativo è l'ambiente di virtualizzazione `Docker`. <br>
+Il software può essere scaricato da: <link>https://www.docker.com/products/docker-desktop/</link>. <br>
+Il link diretto per Windows è: <a href="https://desktop.docker.com/win/main/amd64/Docker%20Desktop%20Installer.exe?utm_source=docker&utm_medium=webreferral&utm_campaign=dd-smartbutton&utm_location=module&_gl=1*1pd78qm*_gcl_au*MTEzNjQ4MDQwNS4xNzM4MDY4NDQ2*_ga*MTg2ODU3OTU3MC4xNzM0NDI1MjM4*_ga_XJWPQMJYHQ*MTczODE0NDI4OS40LjEuMTczODE0ODI0OC41OS4wLjA">questo</a>.
 
-## Installazione
+## Installazione (tramite immagine Docker)
+Questo metodo dovrebbe essere utilizzato nel caso non si vogliano i sorgenti ed è il <b>metodo che dovrebbe essere utilizzato nella maggior parte dei casi</b>. <br>
+Da una shell Windows/Linux/macOS eseguire il seguente comando:
 
+```
+ docker pull eugeniopolito/detect_lunar_flash   
+```
+
+## Installazione (tramite sorgenti)
+In alternativa il tool può essere installato attraverso i sorgenti in questo modo:
 - scaricare il codice sorgente da `GitHub` direttamente da console col comando: 
  ```
 git clone https://github.com/eugeniopolito/detect_lunar_flash.git
 ```
 oppure cliccando sul bottone verde `< > Code` e selezionando quindi `Download ZIP`.
 
-- eseguire i due comandi nell'ordine:
+- eseguire i seguenti comandi:
 
 ```
-python -m ensurepip --upgrade
-
-pip install pipenv
+ cd detect_lunar_flash
+ 
+ docker build -t detect_lunar_flash .  
 ```
 
 ## Avvio del tool
-Dopo aver scaricato il codice sorgente da `GitHub`, posizionarsi nella directory:
+Per eseguire il programma, in entrambi i metodi utilizzati per l'installazione, lanciare il seguente comando:
 
 ```
-cd detect_lunar_flash
+docker run --rm -v <directory>:/app/images -it detect_lunar_flash
 ```
 
-e lanciare solo la prima volta il comando seguente per installare le librerie necessarie:
+dove `<directory>` è la directory del proprio file system che contiene le immagini in formato `PNG` da analizzare. Per esempio: `c:\immagini` (Windows) oppure `/home/user/images` (macOS/Linux). <br>
+In questa directory verranno eventualmente scritte le immagini in cui vengono trovati i probabili flash.
 
-```
-pipenv install
-```
-
-al termine dell'installazione si può eseguire il programma:
-
-```
-pipenv run python app.py
-```
-
-Il primo lancio impiegherà qualche secondo per l'avvio perché vengono precompilati i file dall'interprete.
 
 ## Esempio
 
@@ -96,8 +90,7 @@ Per esempio con i valori: `3.75`, `2000`, `0.3` si ottiene questo output:
 Il fattore di scala calcolato è [km/pixel]: 2.41
 ```
 
-Infine viene richiesto il percorso della directory delle immagini PNG catturate da `FDS`.
-Tale percorso deve essere assoluto, per esempio su Windows: `d:\immagini\2025-01-01\` oppure su Linux/macOS: `/home/darkstar/test_images/` (necessario lo slash/back-slash finale su tutti i sistemi operativi).<br>
+Il programma passa quindi ad elaborare tutti i file contenuti nella directory `<directory>` passata come argomento in fase di avvio. <br>
 Nel caso venga trovato effettivamente un probabile flash, l'output del programma è questo:
 
 ```
