@@ -43,7 +43,7 @@ Dopo aver scaricato il codice sorgente da `GitHub`, posizionarsi nella directory
 cd detect_lunar_flash
 ```
 
-e lanciare la prima volta il comando seguente per installare le librerie necessarie:
+e lanciare solo la prima volta il comando seguente per installare le librerie necessarie:
 
 ```
 pipenv install
